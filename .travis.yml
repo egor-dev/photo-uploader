@@ -1,0 +1,14 @@
+language: php
+
+php:
+  - 7.1
+
+before_script:
+  - touch database/testing.sqlite
+  - composer self-update
+  - composer install --no-interaction
+  - php artisan key:generate
+  - php artisan migrate:fresh --env=testing
+
+script:
+  - vendor/bin/phpunit
