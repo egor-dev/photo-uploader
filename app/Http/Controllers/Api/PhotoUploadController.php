@@ -61,6 +61,7 @@ class PhotoUploadController extends Controller
             [$photos, $errors] = $this->uploaded->handle($request->file('photos'));
         }
 
+
         return \response()->json([
             'message' => 'ok',
             'data' => PhotoResource::collection($photos),
