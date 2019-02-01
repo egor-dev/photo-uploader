@@ -19,10 +19,7 @@ cd laradock
 docker-compose up -d nginx postgres
 ```
 ``` 
-docker-compose exec workspace bash
-```
-```  
-php artisan migrate:fresh
+docker-compose exec workspace php artisan migrate:fresh
 ```
 
  Можно пробовать загружать фотографии через `http://127.0.0.1:8080/api/photos/upload`.
